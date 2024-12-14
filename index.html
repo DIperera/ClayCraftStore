@@ -3,37 +3,38 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Responsive Navigation</title>
+    <title>Responsive Navigation with Animations</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
     <div class="dxnav">
-        <ul class="dxh">
+        <ul class="dxh" data-animate="fade-in">
             <li><img src="images/cup1.jpg" alt="" class="logo"></li>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Contact</a></li>
+            <li id="scrollToHome"><a>Home</a></li>
+            <li id="scrollToAbout"><a>About</a></li>
+            <li id="scrollToProduct"><a>Products</a></li>
+            <li id="scrollToCon"><a>Contact</a></li>
         </ul>
     </div>
     <div class="mobnav">
         <ul class="mbh">
-        <div class="qq" style="display: none;">
-            <li><button id="efg" >close</button></li>
-            <li><img src="images/cup1.jpg" alt="" class="logo"></li>
-        </div>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Contact</a></li><br><br>
-        <div class="rr">  
-            <li><img src="images/cup1.jpg" alt="" class="logo"></li>
-            <li><button id="abc">Menu</button></li>
-        </div>    
+            <div class="qq" style="display: none;">
+                <li><button id="efg">close</button></li>
+                <li><img src="images/cup1.jpg" alt="" class="logo"></li>
+            </div>
+            <li id="scrollToHome2"><a>Home</a></li>
+            <li id="scrollToAbout2"><a>About</a></li>
+            <li id="scrollToProduct2"><a>Products</a></li>
+            <li id="scrollToCon2"><a>Contact</a></li><br><br>
+            <div class="rr">  
+                <li><img src="images/cup1.jpg" alt="" class="logo"></li>
+                <li><button id="abc">Menu</button></li>
+            </div>    
         </ul>
     </div>
-    <div class="con1">
+    <div class="con1" data-animate="fade-in" id="con1">
         <div class="introimage">
             <img src="images/woman.jpg" alt="potterywoman">
         </div>
@@ -43,30 +44,45 @@
             <button class="btn1">SHOP NOW</button>
             <div class="experience">
                 <div><h1>20 Years+</h1><p>Work experience</p></div>
-                <div><h1>200+</h1><p>Projects</p></div>
+                <div><h1 style="margin-right: 10px;">200+</h1><p>Projects</p></div>
             </div>
         </div>
     </div>
-    <div class="aboutcon">
+    <div class="aboutcon" data-animate="fade-in" id="aboutcon">
         <img src="images/cup1.jpg" alt="cup">
         <div class="about">
-        <h1>We Provide The Best Products</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam laboriosam iste alias odio ratione impedit numquam, optio sunt, omnis accusamus, </p>
-        <ul>
-            <li>Guaranteed quality</li>
-            <li>Extensive Experience</li>
-            <li>Professional Workors</li>
-            <li>Reliable Service</li>
-        </ul>
-        <button class="btn1">View Projects</button>
+            <h1>We Provide The Best Products</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam laboriosam iste alias odio ratione impedit numquam, optio sunt, omnis accusamus, </p>
+            <ul>
+                <li>Guaranteed quality</li>
+                <li>Extensive Experience</li>
+                <li>Professional Workers</li>
+                <li>Reliable Service</li>
+            </ul>
+            <button class="btn1">View Projects</button>
+        </div>
     </div>
+    <div class="container" data-animate="fade-in" id="container">
+        <div class="title"><h2>Our Products</h2></div>
+        <div class="description"><p>Explore our latest collection of Handmade items designed for style and functionality.</p></div>
+        <div class="products" id="product-list">
+            <!-- Products will be dynamically generated -->
+        </div>
     </div>
+    <div class="contactcon" data-animate="fade-in" id="contactcon">
+        <img src="images/contact.gif" alt="contact">
+        <div class="contact">
+            <h1>Contact Us</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam laboriosam iste alias odio ratione impedit numquam, optio sunt, omnis accusamus, </p>
+            <ul>
+                <li><i class="bi bi-instagram" style="color: rgb(255, 136, 156);"></i><label>   Follow Us on Instagram</label></li>
+                <li><i class="bi bi-facebook" style="color: rgb(50, 4, 255);"></i>   Visit our Facebook Page</li>
+                <li><i class="bi bi-whatsapp" style="color: rgb(36, 247, 60);"></i>   Contact us on Whatsapp</li>
+                <li><i class="bi bi-twitter" style="color: rgb(145, 172, 255);"></i>   Contact us on Twitter</li>               
+            </ul>
+        </div>
+    </div>
+    <script src="main.js"></script>
 
-<div class="container">
-    <div class="title"><h1>Our Products</h1></div>
-    <div class="description"><p>Explore our latest collection of Handmade items designed for style and functionality.</p></div>
-    <div class="products" id="product-list"></div>
-</div>
-<script src="main.js"></script>
 </body>
 </html>

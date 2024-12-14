@@ -1,8 +1,15 @@
 body{
     background-color: rgb(79, 67, 67);
+    user-select: none;
 
 }
-.experience h1, .container h1{
+.experience h1{
+    margin-bottom: 0;
+    margin-left: 0;
+    padding-bottom: 0;
+    max-width: fit-content;
+}
+.container h2{
     margin-bottom: 0;
     margin-left: 0;
     padding-bottom: 0;
@@ -73,7 +80,7 @@ body{
     .dxh {
         display: none;
     }
-    .introimage, .introimage img, .aboutcon img{
+    .introimage, .introimage img, .aboutcon img, .contactcon img{
         width: clamp(250px,80vw,400px);
         
         margin-left: auto;
@@ -81,13 +88,22 @@ body{
         height: clamp(400px,50vh,600px);
         border-radius: 50%;
     }
-    .intro, .about{
+    .intro, .about, .contact{
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         width: clamp(350px,40vw,500px);
         padding-left: 10%;
+    }
+    .intro p, .aboutcon p, .container p, .contactcon p{
+        font-size: 1.2em;
+    }
+    .aboutcon li, .contactcon li{
+        font-size: 1.1em;
+        list-style-type: none;
+        font-weight: bold;
+        letter-spacing: 1px;
     }
     
 
@@ -96,12 +112,12 @@ body{
     .mbh {
         display: none;
     }
-    .introimage, .introimage img, .aboutcon img{
+    .introimage, .introimage img, .aboutcon img, .contactcon img{
         width: clamp(100px,50vw,500px);
         height: clamp(400px,90vh,900px);
         border-radius: 50%;
     }
-    .intro, .about{
+    .intro, .about, .contact{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -111,8 +127,17 @@ body{
         
         
     }
+    .aboutcon p, .container p, .contactcon p{
+        font-size: 1.5em;
+    }
+    .aboutcon li, .contactcon li{
+        font-size: 1.2em;
+        list-style-type: none;
+        font-weight: bold;
+    }
+
 }
-.aboutcon{
+.aboutcon, .contactcon{
     padding-top: 40px;
     background-color: gray;
 
@@ -124,21 +149,16 @@ body{
     flex-wrap: wrap;
     padding-bottom: 30px;
 }
-.aboutcon p, .container p{
-    font-size: 1.5em;
-}
 
-.aboutcon ul{
+
+.aboutcon ul, .contactcon ul{
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
     margin-left: 0;
     padding-left: 0;
 }
-.aboutcon li {
-    font-size: 1.2em;
-    list-style-type: none;
-}
+
 .mbh.anim {
     top: 0;
 }
@@ -182,7 +202,7 @@ body{
 .container {
     
     background-color: rgb(147, 117, 26);
-    margin-top: 150px;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -261,4 +281,28 @@ body{
 
 .button:hover {
     background-color: #0056b3;
+}
+
+.contact i{
+    font-size: 2em;
+    margin: 10px;
+}
+
+.contact i:hover, button:hover{
+    filter: brightness(0.8);
+    transition: 0.1s ease;
+    cursor: pointer;
+}
+
+ /* Hidden initially */
+ [data-animate] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Animate on visible */
+[data-animate].animate {
+    opacity: 1;
+    transform: translateY(0);
 }
