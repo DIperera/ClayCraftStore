@@ -140,9 +140,9 @@ body{
 .aboutcon, .contactcon{
     padding-top: 40px;
     background-color: gray;
-
+    margin-top: 10px;
     position: relative;
-    top: 50px;
+    top: 30px;
     z-index: 2;
     display: flex;
     align-content: center;
@@ -169,7 +169,7 @@ body{
 
 .con1{
     position: relative;
-    margin-top: 80px;
+    margin-top: 50px;
     padding-top: 30px;
     z-index: 2;
     display: flex;
@@ -202,7 +202,7 @@ body{
 .container {
     
     background-color: rgb(147, 117, 26);
-    margin-top: 100px;
+    margin-top: 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -305,4 +305,91 @@ body{
 [data-animate].animate {
     opacity: 1;
     transform: translateY(0);
+}
+
+
+#overview {
+    display: none;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 800px;
+    background-color: rgb(147, 117, 26);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+.overview-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.overview-image {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.overview-details {
+    text-align: left;
+}
+
+.overview-details h2 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.overview-details p {
+    margin: 5px 0;
+    font-size: 16px;
+    
+}
+
+.close-overview {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.close-overview:hover {
+    background-color: #c82333;
+}
+
+@media (min-width: 768px) {
+    .overview-content {
+        flex-direction: row;
+    }
+
+    .overview-image {
+        max-width: 50%;
+        margin-right: 20px;
+    }
+}
+
+#overview.show {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
