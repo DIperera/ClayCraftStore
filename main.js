@@ -84,25 +84,22 @@ products.forEach((product, index) => {
         <div class="name">${product.name}</div>
         <div class="rating">${'★'.repeat(Math.floor(product.rating))}${'☆'.repeat(5 - Math.floor(product.rating))}</div>
         <div class="price">${product.price}</div>
-        <button class="button" data-index="${index}" onclick="display1()">See more</button>
+        <button class="button" data-index="${index}" onclick="display1(${index})">See more</button>
     `;
 
     productList.appendChild(productDiv);
 });
 
-function display1(){
+function display1(index) {
+    const product = products[index]; // Get the product using the index
     const overview = document.getElementById("overview");
     overview.style.display = "block";
-}
 
-// Function to update the overview section
-function updateOverview(product) {
     overview.innerHTML = `
         <div class="overview-content">
             <img src="${product.image}" alt="${product.name}" class="overview-image">
             <div class="overview-details">
                 <h2>${product.name}</h2>
-                
                 <p><strong>Price:</strong> ${product.price}</p>
                 <p><strong>Rating:</strong> ${product.rating} ★</p>
             </div>
@@ -110,24 +107,14 @@ function updateOverview(product) {
         <p><strong>Description:</strong> ${product.description}</p>
         <button class="button close-overview" onclick="display2()">Back</button>
     `;
-
+    document.getElementById("idx2").scrollIntoView({ behavior: "smooth" });
 }
+
 function display2(){
     const overview = document.getElementById("overview");
     overview.style.display = "none";
     document.getElementById("idx").scrollIntoView({ behavior: "smooth" });
 }
-
-// Add event listeners for "Add to Cart" buttons
-document.querySelectorAll('.button').forEach(button => {
-    button.addEventListener('click', (event) => {
-        const productIndex = event.target.getAttribute('data-index');
-        const selectedProduct = products[productIndex];
-        updateOverview(selectedProduct);
-        document.getElementById("idx2").scrollIntoView({ behavior: "smooth" });
-        
-    });
-});
 
 // Intersection Observer for animations
 const animatedElements = document.querySelectorAll('[data-animate]');
@@ -177,5 +164,21 @@ document.getElementById("scrollToProduct2").addEventListener("click", () => {
 });
 
 document.getElementById("scrollToCon2").addEventListener("click", () => {
+    document.getElementById("idx2").scrollIntoView({ behavior: "smooth" });
+});
+
+document.getElementById("scrollToHome3").addEventListener("click", () => {
+    document.getElementById("idx4").scrollIntoView({ behavior: "smooth" });
+});
+
+document.getElementById("scrollToAbout3").addEventListener("click", () => {
+    document.getElementById("idx3").scrollIntoView({ behavior: "smooth" });
+});
+
+document.getElementById("scrollToProduct3").addEventListener("click", () => {
+    document.getElementById("idx").scrollIntoView({ behavior: "smooth" });
+});
+
+document.getElementById("scrollToCon3").addEventListener("click", () => {
     document.getElementById("idx2").scrollIntoView({ behavior: "smooth" });
 });
